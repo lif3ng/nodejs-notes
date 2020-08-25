@@ -5,9 +5,17 @@ module.exports = {
   cache: false,
   base: "/nodejs-notes/",
   themeConfig: {
-    nav: [{ text: "Node.js API", link: "/api/" }],
+    sidebarDepth: 2,
+    nav: [
+      { text: "JS Core", link: "/core/" },
+      { text: "Node.js API", link: "/api/" },
+    ],
     sidebar: {
       "/api/": ["", "os"],
+      "/core/": [
+        "",
+        { title: "引用类型", children: ["date", "regexp", "array"] },
+      ],
     },
   },
 
