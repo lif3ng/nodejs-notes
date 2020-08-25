@@ -3,7 +3,7 @@ const unescapeAll = require("markdown-it/lib/common/utils").unescapeAll;
 
 module.exports = {
   cache: false,
-  // extend: '@vuepress/theme-default',
+  base: "/nodejs-notes/",
   themeConfig: {
     nav: [{ text: "Node.js API", link: "/api/" }],
     sidebar: {
