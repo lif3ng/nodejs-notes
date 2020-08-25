@@ -1,0 +1,26 @@
+{
+  "name": "nodejs-notes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/lif3ng/nodejs-notes.git",
+  "author": "lif3ng <lif3ng@iclud.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "prettier": "2.1.0",
+    "pretty-quick": "^3.0.0",
+    "vuepress": "^1.5.2"
+  },
+  "scripts": {
+    "start": "vuepress dev notes --no-cache",
+    "build": "vuepress build notes --no-cache"
+  },
+  "dependencies": {
+    "codemirror": "^5.56.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}
