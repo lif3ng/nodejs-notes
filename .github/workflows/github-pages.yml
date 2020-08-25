@@ -20,7 +20,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: node -v
+      - run: yarn
       - run: yarn build
-      - run: git config --local user.email "lif3ng@icloud.com"
-      - run: git config --local user.name "lif3ng"
-      - run: cd notes/.vuepress/dist; git init; git push -f https://lif3ng:${{ secrets.GITHUB_TOKEN }}@github.com/lif3ng/nodejs-notes.git master:gh-pages
+      - run: git config --global user.email "lif3ng@icloud.com"
+      - run: git config --global user.name "lif3ng"
+      - run: cd notes/.vuepress/dist; git init; git add --all; git commit -m 'deploy'; git push -f https://lif3ng:${{ secrets.GITHUB_TOKEN }}@github.com/lif3ng/nodejs-notes.git master:gh-pages
