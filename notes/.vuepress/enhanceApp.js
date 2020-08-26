@@ -9,9 +9,12 @@ export default ({ router }) => {
     if (toPath !== fromPath) {
       setTimeout(() => {
         const codeNodeList = document.querySelectorAll(".code-block>div");
-        import("codemirror/lib/codemirror").then(({ default: CodeMirror }) => {
+        Promise.all([
+          import("codemirror/lib/codemirror"),
+          import("codemirror/mode/javascript/javascript"),
+        ]).then(([{ default: CodeMirror }]) => {
           codeNodeList.forEach((ele) => {
-            const code = ele.innerHTML;
+            const code = ele.textContent;
             CodeMirror(
               (elt) => {
                 console.log({ ele, elt });

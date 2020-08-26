@@ -1,11 +1,14 @@
 const { PLUGINS, removeAllBuiltInPlugins } = require("@vuepress/markdown");
 const unescapeAll = require("markdown-it/lib/common/utils").unescapeAll;
-
+const path = require("path");
 module.exports = {
   cache: false,
   base: "/nodejs-notes/",
+  alias: {
+    styles: path.resolve(__dirname, "./styles"),
+  },
   themeConfig: {
-    sidebarDepth: 2,
+    // sidebarDepth: 2,
     nav: [
       { text: "JS Core", link: "/core/" },
       { text: "Node.js API", link: "/api/" },
