@@ -154,7 +154,62 @@ ES5 提供了 `Array.isArray`, IE 9 + 可用，能检测 iframes.
 
 ## 迭代器
 
+ES6 Array 原型上新增了检索方法：
+
+- keys 返回索引（下标）迭代器
+- values 返回值迭代器
+- entries 返回键值对数组迭代器
+
+```js
+const a = ["foo", "bar", "baz", "qux"];
+
+// 因为这些方法都返回迭代器，所以可以将它们的内容
+// 通过Array.from()直接转换为数组实例
+const aKeys = Array.from(a.keys());
+const aValues = Array.from(a.values());
+const aEntries = Array.from(a.entries());
+
+console.log(aKeys); // [0, 1, 2, 3]
+console.log(aValues); // ["foo", "bar", "baz", "qux"]
+console.log(aEntries); // [[0, "foo"], [1, "bar"], [2, "baz"], [3, "qux"]]
+// 通过解构遍历 entries 迭代器
+for (const [idx, element] of a.entries()) {
+  console.log({ idx, element });
+}
+```
+
 ## 复制与填充
+
+ES6 Array 原型链上新增：
+
+- 批量复制方法 `fill`
+- 数组填充方法 `copyWithin`
+
+```javascript
+arr.fill(value[, start[, end]])
+arr.copyWithin(target[, start[, end]])
+```
+
+这俩方法可以用于任意对象，而不仅仅是数组。
+
+```js
+[].fill.call({ length: 5 }, "x", 1, -2);
+```
+
+对越界下标，只要能解释得通，都能用
+
+```js
+[].fill.call({ length: 5 }, "x", -10, 100);
+```
+
+## 转换方法
+
+<!-- ```js
+let colors = ["red", "blue", "green"]; // 创建一个包含3个字符串的数组
+console.log(colors.toString()); // red,blue,green
+console.log(colors.valueOf()); // red,blue,green
+console.log(colors); // red,blue,green
+``` -->
 
 ## 栈方法
 
@@ -163,3 +218,8 @@ ES5 提供了 `Array.isArray`, IE 9 + 可用，能检测 iframes.
 ## 排序
 
 ## 操作
+
+## 参考
+
+- 一个 [Array Playground](https://js-array-playground.netlify.app/)
+  [仓库](https://github.com/Sellsuki/js-array-playground)
