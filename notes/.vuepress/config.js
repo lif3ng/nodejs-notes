@@ -17,8 +17,8 @@ module.exports = {
     sidebar: {
       "/api/": ["", "os"],
       "/core/": [
-        "",
         { title: "引用类型", children: ["date", "regexp", "array"] },
+        "proxy",
       ],
     },
   },
