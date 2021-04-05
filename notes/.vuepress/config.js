@@ -19,6 +19,7 @@ module.exports = {
       "/core/": [
         { title: "引用类型", children: ["date", "regexp", "array"] },
         "proxy",
+        "iterator",
       ],
     },
   },
