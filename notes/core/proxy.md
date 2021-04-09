@@ -1,8 +1,6 @@
 # Proxy 代理
 
-## 基础
-
-### 构造函数
+## 创建 Proxy
 
 ```javascript
 const p = new Proxy(target, handler);
@@ -69,4 +67,28 @@ console.log(proxy["foo"]); // handler override
 
 console.log(Object.create(target)["foo"]); // bar
 console.log(Object.create(proxy)["foo"]); // handler override
+```
+
+## 捕获器
+
+使用代理的目的是定义捕获器（trap），捕获器就是在处理对象中定义的**基本操作拦截器**。
+处理对象所有可拦截的行为都有对应的反射（Reflect）API 方法，可以直接调用获得默认行为。
+
+## 捕获器不变性
+
+使用捕获器改变基本操作的行为，是有限制的。捕获程序需要遵循**捕获器不变式**（trap invariant).
+
+比如一个不可写不可配置的属性，无法通过 get 捕获器覆盖其返回值。
+
+```js
+const target = {};
+Object.defineProperty(target, "foo", { value: "bar" });
+console.log(Object.getOwnPropertyDescriptor(target, "foo"));
+
+const proxy = new Proxy(target, {
+  get() {
+    return "abc";
+  },
+});
+console.log(proxy.foo);
 ```
