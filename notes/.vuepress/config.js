@@ -17,7 +17,7 @@ module.exports = {
     sidebar: {
       "/api/": ["", "os"],
       "/core/": [
-        { title: "引用类型", children: ["date", "regexp", "array"] },
+        { title: "引用类型", children: ["date", "regexp", "array", "set"] },
         "proxy",
         "iterator",
       ],
@@ -32,7 +32,7 @@ module.exports = {
           const token = tokens[idx],
             info = token.info ? unescapeAll(token.info).trim() : "";
           if (info === "js") {
-            return `<div class="code-block inside-gutter"><div>${token.content}</div></div>`;
+            return `<div class="code-block inside-gutter"><div>${token.content}</div>xxx</div>`;
           }
           return defaultFenceRule(tokens, idx, options, env, slf);
         };
