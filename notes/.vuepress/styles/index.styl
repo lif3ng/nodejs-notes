@@ -30,3 +30,24 @@
     margin-top 20px
 .CodeMirror
   height auto
+
+.code-block
+  > button
+    margin: 8px 0
+    padding: 4px
+    border-radius: 4px
+    border: 2px solid green
+    background: lightgreen
+    cursor: pointer
+    &:focus
+      outline: none // no a11y, because codemirror editor will block tabindex
+    &:hover
+      background darken(lightgreen,20%)
+    + button
+      margin-left: 8px
+  &[data-current=runkit]
+    >.code-container>.CodeMirror
+    >.btn-runkit
+    >.btn-worker
+      display: none
+      

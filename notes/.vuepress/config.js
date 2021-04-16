@@ -32,7 +32,7 @@ module.exports = {
           const token = tokens[idx],
             info = token.info ? unescapeAll(token.info).trim() : "";
           if (info === "js") {
-            return `<div class="code-block inside-gutter"><div>${token.content}</div>xxx</div>`;
+            return `<div class="code-block inside-gutter">${token.content}</div>`;
           }
           return defaultFenceRule(tokens, idx, options, env, slf);
         };
