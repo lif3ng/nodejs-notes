@@ -20,7 +20,7 @@ const handleRunByWorker = (code) => {
 };
 const handleReset = ({ block, editor }) => {
   editor.setValue(block.initCode);
-  block.querySelector("iframe").remove();
+  block.querySelector("iframe")?.remove();
   block.dataset.current = "";
 };
 const runderEditorByCode = ({ container, CodeMirror, code, callback }) => {
