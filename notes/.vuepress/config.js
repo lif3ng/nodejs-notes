@@ -8,7 +8,7 @@ module.exports = {
   },
 
   themeConfig: {
-    // sidebarDepth: 2,
+    sidebarDepth: 3,
     smoothScroll: true,
     nav: [
       { text: "JS Core", link: "/core/" },
@@ -17,7 +17,13 @@ module.exports = {
     sidebar: {
       "/api/": ["", "os"],
       "/core/": [
-        { title: "引用类型", children: ["date", "regexp", "array", "set"] },
+        {
+          title: "类型",
+          children: [
+            { title: "原始类型", children: ["symbol"] },
+            { title: "引用类型", children: ["date", "regexp", "array", "set"] },
+          ],
+        },
         "proxy",
         "iterator",
       ],
