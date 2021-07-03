@@ -20,7 +20,7 @@ module.exports = {
         {
           title: "数据类型",
           children: [
-            "type",
+            // "type",
             { title: "原始类型", children: ["symbol"] },
             { title: "引用类型", children: ["date", "regexp", "array", "set"] },
           ],
