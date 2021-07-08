@@ -4,7 +4,7 @@ js 中正则实例有字面量写法 `/pattern/flags` 和构造函数 `new RegEx
 
 ## 模式 pattern
 
-正则表达式。
+正则表达式。其中可以使用[字符类](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions/Character_Classes)代表一类字符。
 
 使用构造函数时要注意对一些元字符进行转义。与字面量写法相比，构造函数中的第一个参数模式可读性比较差。
 
@@ -55,6 +55,24 @@ let m1 = "abcabc".match(/ab/g);
 let m2 = "abcabc".match(/ab/gy);
 let m3 = "abcabc".match(/abc/gy);
 console.log(m1, m2, m3);
+```
+
+- unicode 匹配
+
+  - 可使用 Unicode 属性，每个属性都有全名还多个简写。属性比字符类支持更多语言的字符。
+
+    - non-binary 属性 `\p{UnicodePropertyName=UnicodePropertyValue}`
+    - binary 属性 `\p{LoneUnicodePropertyNameOrValue}`
+
+  - 参考
+    - https://tc39.es/ecma262/#sec-runtime-semantics-unicodematchproperty-p
+    - https://github.com/tc39/proposal-regexp-unicode-property-escapes
+    - https://unicode.org/reports/tr18/
+    - https://stackoverflow.com/questions/280712/javascript-unicode-regexes
+    - https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions/Unicode_Property_Escapes
+
+```js
+console.log("⑥".match(/\p{N}/u));
 ```
 
 ## 实例属性

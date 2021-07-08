@@ -32,6 +32,9 @@ module.exports = {
   },
 
   markdown: {
+    extendMarkdown: (md) => {
+      md.set({ linkify: true });
+    },
     plugins: [
       (md) => {
         const defaultFenceRule = md.renderer.rules.fence;
