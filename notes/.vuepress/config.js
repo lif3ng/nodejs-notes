@@ -28,6 +28,7 @@ module.exports = {
         "proxy",
         "iterator",
         "promise",
+        "tagfunction",
       ],
     },
   },
