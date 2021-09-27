@@ -202,16 +202,53 @@ arr.copyWithin(target[, start[, end]])
 [].fill.call({ length: 5 }, "x", -10, 100);
 ```
 
-## 转换方法
+## array -> str 转换
 
-<!-- ```js
-let colors = ["red", "blue", "green"]; // 创建一个包含3个字符串的数组
-console.log(colors.toString()); // red,blue,green
-console.log(colors.valueOf()); // red,blue,green
-console.log(colors); // red,blue,green
-``` -->
+toString 调用数组项的 toString，然后通过逗号拼接
+
+toLocaleString 调用数组项的 toLocalString，然后通过逗号拼接
+
+根据运算符规则，如果期望位置是一个字符串，则调用其 toString 方法。如：`alert(value)`, `'' + value`
+
+```js
+const arr = [1, "xyz", new Date()];
+console.log(arr.toString());
+console.log("" + arr);
+console.log(arr.toLocaleString());
+```
+
+join 可以指定分隔符，传入 `,` 时返回结果和 toString 结果相同。
+
+```js
+const arr = ["a", "b", "c"];
+console.log(arr.toString(), arr.join(","));
+console.log(arr.join("---"));
+```
+
+```js
+const arr = ["a", null, "b", undefined];
+console.log(arr.join("-"));
+console.log(arr.toString());
+console.log(arr.toLocaleString());
+```
 
 ## 栈方法
+
+push(v) 推入
+
+pop() 弹出
+
+```js
+arr = [];
+arr.push("a");
+console.log("push a", arr);
+arr.push("b");
+console.log("push b", arr);
+console.log("pop", arr.pop());
+console.log("arr", arr);
+console.log("pop", arr.pop());
+console.log("arr", arr);
+```
 
 ## 队列方法
 
