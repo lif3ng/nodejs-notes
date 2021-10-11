@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Promise</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/nodejs-notes/assets/css/0.styles.e62306a8.css" as="style"><link rel="preload" href="/nodejs-notes/assets/js/app.21c8c690.js" as="script"><link rel="preload" href="/nodejs-notes/assets/js/3.3c66409c.js" as="script"><link rel="preload" href="/nodejs-notes/assets/js/15.2be05732.js" as="script"><link rel="prefetch" href="/nodejs-notes/assets/js/1.7384dd9d.js"><link rel="prefetch" href="/nodejs-notes/assets/js/10.5f4d0c8f.js"><link rel="prefetch" href="/nodejs-notes/assets/js/11.521db22d.js"><link rel="prefetch" href="/nodejs-notes/assets/js/12.afa08de9.js"><link rel="prefetch" href="/nodejs-notes/assets/js/13.80238336.js"><link rel="prefetch" href="/nodejs-notes/assets/js/14.ffb663c6.js"><link rel="prefetch" href="/nodejs-notes/assets/js/16.2a709045.js"><link rel="prefetch" href="/nodejs-notes/assets/js/17.fa715d45.js"><link rel="prefetch" href="/nodejs-notes/assets/js/18.d9ddc906.js"><link rel="prefetch" href="/nodejs-notes/assets/js/19.497f6348.js"><link rel="prefetch" href="/nodejs-notes/assets/js/20.42e9dc36.js"><link rel="prefetch" href="/nodejs-notes/assets/js/21.ee788258.js"><link rel="prefetch" href="/nodejs-notes/assets/js/4.eb89986a.js"><link rel="prefetch" href="/nodejs-notes/assets/js/5.c15b3792.js"><link rel="prefetch" href="/nodejs-notes/assets/js/6.de1e01ed.js"><link rel="prefetch" href="/nodejs-notes/assets/js/7.fd3efa5e.js"><link rel="prefetch" href="/nodejs-notes/assets/js/8.b3e41791.js"><link rel="prefetch" href="/nodejs-notes/assets/js/9.60345875.js">
+    <link rel="stylesheet" href="/nodejs-notes/assets/css/0.styles.e62306a8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/nodejs-notes/" class="home-link router-link-active"></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/nodejs-notes/core/" class="nav-link router-link-active">
+  JS Core
+</a></div><div class="nav-item"><a href="/nodejs-notes/api/" class="nav-link">
+  Node.js API
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/nodejs-notes/core/" class="nav-link router-link-active">
+  JS Core
+</a></div><div class="nav-item"><a href="/nodejs-notes/api/" class="nav-link">
+  Node.js API
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>数据类型</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading open"><span>原始类型</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/nodejs-notes/core/symbol.html" class="sidebar-link">Symbol</a></li></ul></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>引用类型</span> <span class="arrow right"></span></p> <!----></section></li></ul></section></li><li><a href="/nodejs-notes/core/proxy.html" class="sidebar-link">Proxy 代理</a></li><li><a href="/nodejs-notes/core/iterator.html" class="sidebar-link">迭代器</a></li><li><a href="/nodejs-notes/core/promise.html" aria-current="page" class="active sidebar-link">Promise</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/nodejs-notes/core/promise.html#类方法" class="sidebar-link">类方法</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/nodejs-notes/core/promise.html#promise-resolve" class="sidebar-link">Promise.resolve</a></li><li class="sidebar-sub-header"><a href="/nodejs-notes/core/promise.html#promise-reject" class="sidebar-link">Promise.reject</a></li></ul></li><li class="sidebar-sub-header"><a href="/nodejs-notes/core/promise.html#实例方法" class="sidebar-link">实例方法</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/nodejs-notes/core/promise.html#then" class="sidebar-link">then</a></li><li class="sidebar-sub-header"><a href="/nodejs-notes/core/promise.html#catch" class="sidebar-link">catch</a></li><li class="sidebar-sub-header"><a href="/nodejs-notes/core/promise.html#finally" class="sidebar-link">finally</a></li></ul></li></ul></li><li><a href="/nodejs-notes/core/tagfunction.html" class="sidebar-link">Tag function</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="promise"><a href="#promise" class="header-anchor">#</a> Promise</h1> <p>Promise 用于为异步过程提供语言级别的支持。</p> <p>Promise 有三个状态：</p> <ul><li>pending 悬而未决</li> <li>fulfilled 达成正向结果</li> <li>rejected 未达成正向结果</li></ul> <h2 id="类方法"><a href="#类方法" class="header-anchor">#</a> 类方法</h2> <h3 id="promise-resolve"><a href="#promise-resolve" class="header-anchor">#</a> Promise.resolve</h3> <p>返回一个 fulfilled 状态的 Promise 实例。</p> <p>可将一个值包裹成一个 Promise 实例</p> <div class="code-block inside-gutter">console.log(Promise.resolve(1));
+</div><p>包裹 Promise 的实例后仍为该实例，是个幂等操作。</p> <div class="code-block inside-gutter">let p = new Promise(() =&gt; {});
+console.log(Promise.resolve(p) === p);
+</div><h3 id="promise-reject"><a href="#promise-reject" class="header-anchor">#</a> Promise.reject</h3> <p>返回一个 rejected 状态的 Promise 实例</p> <div class="code-block inside-gutter">console.log(Promise.reject(&quot;result&quot;));
+</div><h2 id="实例方法"><a href="#实例方法" class="header-anchor">#</a> 实例方法</h2> <h3 id="then"><a href="#then" class="header-anchor">#</a> then</h3> <h3 id="catch"><a href="#catch" class="header-anchor">#</a> catch</h3> <h3 id="finally"><a href="#finally" class="header-anchor">#</a> finally</h3></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/nodejs-notes/core/iterator.html" class="prev">
+        迭代器
+      </a></span> <span class="next"><a href="/nodejs-notes/core/tagfunction.html">
+        Tag function
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/nodejs-notes/assets/js/app.21c8c690.js" defer></script><script src="/nodejs-notes/assets/js/3.3c66409c.js" defer></script><script src="/nodejs-notes/assets/js/15.2be05732.js" defer></script>
+  </body>
+</html>

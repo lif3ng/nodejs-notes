@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Tag function</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/nodejs-notes/assets/css/0.styles.e62306a8.css" as="style"><link rel="preload" href="/nodejs-notes/assets/js/app.21c8c690.js" as="script"><link rel="preload" href="/nodejs-notes/assets/js/3.3c66409c.js" as="script"><link rel="preload" href="/nodejs-notes/assets/js/20.42e9dc36.js" as="script"><link rel="prefetch" href="/nodejs-notes/assets/js/1.7384dd9d.js"><link rel="prefetch" href="/nodejs-notes/assets/js/10.5f4d0c8f.js"><link rel="prefetch" href="/nodejs-notes/assets/js/11.521db22d.js"><link rel="prefetch" href="/nodejs-notes/assets/js/12.afa08de9.js"><link rel="prefetch" href="/nodejs-notes/assets/js/13.80238336.js"><link rel="prefetch" href="/nodejs-notes/assets/js/14.ffb663c6.js"><link rel="prefetch" href="/nodejs-notes/assets/js/15.2be05732.js"><link rel="prefetch" href="/nodejs-notes/assets/js/16.2a709045.js"><link rel="prefetch" href="/nodejs-notes/assets/js/17.fa715d45.js"><link rel="prefetch" href="/nodejs-notes/assets/js/18.d9ddc906.js"><link rel="prefetch" href="/nodejs-notes/assets/js/19.497f6348.js"><link rel="prefetch" href="/nodejs-notes/assets/js/21.ee788258.js"><link rel="prefetch" href="/nodejs-notes/assets/js/4.eb89986a.js"><link rel="prefetch" href="/nodejs-notes/assets/js/5.c15b3792.js"><link rel="prefetch" href="/nodejs-notes/assets/js/6.de1e01ed.js"><link rel="prefetch" href="/nodejs-notes/assets/js/7.fd3efa5e.js"><link rel="prefetch" href="/nodejs-notes/assets/js/8.b3e41791.js"><link rel="prefetch" href="/nodejs-notes/assets/js/9.60345875.js">
+    <link rel="stylesheet" href="/nodejs-notes/assets/css/0.styles.e62306a8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/nodejs-notes/" class="home-link router-link-active"></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/nodejs-notes/core/" class="nav-link router-link-active">
+  JS Core
+</a></div><div class="nav-item"><a href="/nodejs-notes/api/" class="nav-link">
+  Node.js API
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/nodejs-notes/core/" class="nav-link router-link-active">
+  JS Core
+</a></div><div class="nav-item"><a href="/nodejs-notes/api/" class="nav-link">
+  Node.js API
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>数据类型</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading open"><span>原始类型</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/nodejs-notes/core/symbol.html" class="sidebar-link">Symbol</a></li></ul></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>引用类型</span> <span class="arrow right"></span></p> <!----></section></li></ul></section></li><li><a href="/nodejs-notes/core/proxy.html" class="sidebar-link">Proxy 代理</a></li><li><a href="/nodejs-notes/core/iterator.html" class="sidebar-link">迭代器</a></li><li><a href="/nodejs-notes/core/promise.html" class="sidebar-link">Promise</a></li><li><a href="/nodejs-notes/core/tagfunction.html" aria-current="page" class="active sidebar-link">Tag function</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/nodejs-notes/core/tagfunction.html#自带的标签函数" class="sidebar-link">自带的标签函数：</a></li><li class="sidebar-sub-header"><a href="/nodejs-notes/core/tagfunction.html#一些社区使用标签函数的-dsl" class="sidebar-link">一些社区使用标签函数的 DSL：</a></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="tag-function"><a href="#tag-function" class="header-anchor">#</a> Tag function</h1> <p>标签函数可以通过</p> <div class="language- extra-class"><pre class="language-text"><code>fun``
+</code></pre></div><p>的格式调用函数，可以传入普通的换行字符串也可以使用 ES6 的插值语法。</p> <p>对参数处理如下图：</p> <iframe width="800" height="450" src="https://www.figma.com/embed?embed_host=share&amp;url=https%3A%2F%2Fwww.figma.com%2Ffile%2FqFP4H6AUminAmZ5vC2149K%2FUntitled%3Fnode-id%3D0%253A1" allowfullscreen="allowfullscreen" style="border:1px solid rgba(0, 0, 0, 0.1);"></iframe> <h2 id="自带的标签函数"><a href="#自带的标签函数" class="header-anchor">#</a> 自带的标签函数：</h2> <ul><li><code>String.raw</code> 不需要对字符串进行转义</li></ul> <div class="language- extra-class"><pre class="language-text"><code>String.raw`\n` =&gt; &quot;\\n&quot;
+</code></pre></div><h2 id="一些社区使用标签函数的-dsl"><a href="#一些社区使用标签函数的-dsl" class="header-anchor">#</a> 一些社区使用标签函数的 DSL：</h2> <ul><li>styled-components</li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/nodejs-notes/core/promise.html" class="prev">
+        Promise
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/nodejs-notes/assets/js/app.21c8c690.js" defer></script><script src="/nodejs-notes/assets/js/3.3c66409c.js" defer></script><script src="/nodejs-notes/assets/js/20.42e9dc36.js" defer></script>
+  </body>
+</html>

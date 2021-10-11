@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Set 集合</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/nodejs-notes/assets/css/0.styles.e62306a8.css" as="style"><link rel="preload" href="/nodejs-notes/assets/js/app.21c8c690.js" as="script"><link rel="preload" href="/nodejs-notes/assets/js/3.3c66409c.js" as="script"><link rel="preload" href="/nodejs-notes/assets/js/18.d9ddc906.js" as="script"><link rel="prefetch" href="/nodejs-notes/assets/js/1.7384dd9d.js"><link rel="prefetch" href="/nodejs-notes/assets/js/10.5f4d0c8f.js"><link rel="prefetch" href="/nodejs-notes/assets/js/11.521db22d.js"><link rel="prefetch" href="/nodejs-notes/assets/js/12.afa08de9.js"><link rel="prefetch" href="/nodejs-notes/assets/js/13.80238336.js"><link rel="prefetch" href="/nodejs-notes/assets/js/14.ffb663c6.js"><link rel="prefetch" href="/nodejs-notes/assets/js/15.2be05732.js"><link rel="prefetch" href="/nodejs-notes/assets/js/16.2a709045.js"><link rel="prefetch" href="/nodejs-notes/assets/js/17.fa715d45.js"><link rel="prefetch" href="/nodejs-notes/assets/js/19.497f6348.js"><link rel="prefetch" href="/nodejs-notes/assets/js/20.42e9dc36.js"><link rel="prefetch" href="/nodejs-notes/assets/js/21.ee788258.js"><link rel="prefetch" href="/nodejs-notes/assets/js/4.eb89986a.js"><link rel="prefetch" href="/nodejs-notes/assets/js/5.c15b3792.js"><link rel="prefetch" href="/nodejs-notes/assets/js/6.de1e01ed.js"><link rel="prefetch" href="/nodejs-notes/assets/js/7.fd3efa5e.js"><link rel="prefetch" href="/nodejs-notes/assets/js/8.b3e41791.js"><link rel="prefetch" href="/nodejs-notes/assets/js/9.60345875.js">
+    <link rel="stylesheet" href="/nodejs-notes/assets/css/0.styles.e62306a8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/nodejs-notes/" class="home-link router-link-active"></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/nodejs-notes/core/" class="nav-link router-link-active">
+  JS Core
+</a></div><div class="nav-item"><a href="/nodejs-notes/api/" class="nav-link">
+  Node.js API
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/nodejs-notes/core/" class="nav-link router-link-active">
+  JS Core
+</a></div><div class="nav-item"><a href="/nodejs-notes/api/" class="nav-link">
+  Node.js API
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>数据类型</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>原始类型</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading open"><span>引用类型</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/nodejs-notes/core/date.html" class="sidebar-link">Date</a></li><li><a href="/nodejs-notes/core/regexp.html" class="sidebar-link">RegExp</a></li><li><a href="/nodejs-notes/core/array.html" class="sidebar-link">Array</a></li><li><a href="/nodejs-notes/core/set.html" aria-current="page" class="active sidebar-link">Set 集合</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/nodejs-notes/core/set.html#初始化" class="sidebar-link">初始化</a></li><li class="sidebar-sub-header"><a href="/nodejs-notes/core/set.html#属性" class="sidebar-link">属性</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/nodejs-notes/core/set.html#size" class="sidebar-link">size</a></li></ul></li><li class="sidebar-sub-header"><a href="/nodejs-notes/core/set.html#操作相关方法" class="sidebar-link">操作相关方法</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/nodejs-notes/core/set.html#add" class="sidebar-link">add</a></li><li class="sidebar-sub-header"><a href="/nodejs-notes/core/set.html#delete" class="sidebar-link">delete</a></li><li class="sidebar-sub-header"><a href="/nodejs-notes/core/set.html#clear" class="sidebar-link">clear</a></li><li class="sidebar-sub-header"><a href="/nodejs-notes/core/set.html#has" class="sidebar-link">has</a></li></ul></li><li class="sidebar-sub-header"><a href="/nodejs-notes/core/set.html#迭代相关方法" class="sidebar-link">迭代相关方法</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/nodejs-notes/core/set.html#keys-values" class="sidebar-link">keys, values</a></li></ul></li><li class="sidebar-sub-header"><a href="/nodejs-notes/core/set.html#entries" class="sidebar-link">entries</a></li><li class="sidebar-sub-header"><a href="/nodejs-notes/core/set.html#foreach" class="sidebar-link">forEach</a></li></ul></li></ul></section></li></ul></section></li><li><a href="/nodejs-notes/core/proxy.html" class="sidebar-link">Proxy 代理</a></li><li><a href="/nodejs-notes/core/iterator.html" class="sidebar-link">迭代器</a></li><li><a href="/nodejs-notes/core/promise.html" class="sidebar-link">Promise</a></li><li><a href="/nodejs-notes/core/tagfunction.html" class="sidebar-link">Tag function</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="set-集合"><a href="#set-集合" class="header-anchor">#</a> Set 集合</h1> <h2 id="初始化"><a href="#初始化" class="header-anchor">#</a> 初始化</h2> <p>构造函数接收一个可迭代对象，生成迭代后去重的集合，对于引用类型会根据引用判断相等来去重。留空或传入 null 创建空集合，传入非可迭代对象保存。</p> <div class="code-block inside-gutter">// new Set([iterable]);
+const s = new Set(&quot;abcabc&quot;);
+</div><h2 id="属性"><a href="#属性" class="header-anchor">#</a> 属性</h2> <h3 id="size"><a href="#size" class="header-anchor">#</a> size</h3> <p>返回集合元素数量</p> <h2 id="操作相关方法"><a href="#操作相关方法" class="header-anchor">#</a> 操作相关方法</h2> <h3 id="add"><a href="#add" class="header-anchor">#</a> add</h3> <p>添加指定值的元素</p> <h3 id="delete"><a href="#delete" class="header-anchor">#</a> delete</h3> <p>删除指定元素</p> <h3 id="clear"><a href="#clear" class="header-anchor">#</a> clear</h3> <p>清空集合中所有元素</p> <h3 id="has"><a href="#has" class="header-anchor">#</a> has</h3> <p>判断指定值是否在集合中</p> <h2 id="迭代相关方法"><a href="#迭代相关方法" class="header-anchor">#</a> 迭代相关方法</h2> <h3 id="keys-values"><a href="#keys-values" class="header-anchor">#</a> keys, values</h3> <p>在集合中，keys 是 values 的别名，返回集合中每个元素的迭代器对象。</p> <div class="code-block inside-gutter">const s = new Set(&quot;abc&quot;);
+console.log(s.keys === s.values);
+const iterator = s.values();
+while ((x = iterator.next().value)) {
+  console.log(x);
+}
+</div><h2 id="entries"><a href="#entries" class="header-anchor">#</a> entries</h2> <h2 id="foreach"><a href="#foreach" class="header-anchor">#</a> forEach</h2> <p>和数组类似，只是原本的下标位置同样是元素本身</p> <div class="code-block inside-gutter">const s = new Set(&quot;abc&quot;);
+s.forEach(console.log);
+</div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/nodejs-notes/core/array.html" class="prev">
+        Array
+      </a></span> <span class="next"><a href="/nodejs-notes/core/proxy.html">
+        Proxy 代理
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/nodejs-notes/assets/js/app.21c8c690.js" defer></script><script src="/nodejs-notes/assets/js/3.3c66409c.js" defer></script><script src="/nodejs-notes/assets/js/18.d9ddc906.js" defer></script>
+  </body>
+</html>

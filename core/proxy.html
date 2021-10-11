@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Proxy 代理</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/nodejs-notes/assets/css/0.styles.e62306a8.css" as="style"><link rel="preload" href="/nodejs-notes/assets/js/app.21c8c690.js" as="script"><link rel="preload" href="/nodejs-notes/assets/js/3.3c66409c.js" as="script"><link rel="preload" href="/nodejs-notes/assets/js/16.2a709045.js" as="script"><link rel="prefetch" href="/nodejs-notes/assets/js/1.7384dd9d.js"><link rel="prefetch" href="/nodejs-notes/assets/js/10.5f4d0c8f.js"><link rel="prefetch" href="/nodejs-notes/assets/js/11.521db22d.js"><link rel="prefetch" href="/nodejs-notes/assets/js/12.afa08de9.js"><link rel="prefetch" href="/nodejs-notes/assets/js/13.80238336.js"><link rel="prefetch" href="/nodejs-notes/assets/js/14.ffb663c6.js"><link rel="prefetch" href="/nodejs-notes/assets/js/15.2be05732.js"><link rel="prefetch" href="/nodejs-notes/assets/js/17.fa715d45.js"><link rel="prefetch" href="/nodejs-notes/assets/js/18.d9ddc906.js"><link rel="prefetch" href="/nodejs-notes/assets/js/19.497f6348.js"><link rel="prefetch" href="/nodejs-notes/assets/js/20.42e9dc36.js"><link rel="prefetch" href="/nodejs-notes/assets/js/21.ee788258.js"><link rel="prefetch" href="/nodejs-notes/assets/js/4.eb89986a.js"><link rel="prefetch" href="/nodejs-notes/assets/js/5.c15b3792.js"><link rel="prefetch" href="/nodejs-notes/assets/js/6.de1e01ed.js"><link rel="prefetch" href="/nodejs-notes/assets/js/7.fd3efa5e.js"><link rel="prefetch" href="/nodejs-notes/assets/js/8.b3e41791.js"><link rel="prefetch" href="/nodejs-notes/assets/js/9.60345875.js">
+    <link rel="stylesheet" href="/nodejs-notes/assets/css/0.styles.e62306a8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/nodejs-notes/" class="home-link router-link-active"></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/nodejs-notes/core/" class="nav-link router-link-active">
+  JS Core
+</a></div><div class="nav-item"><a href="/nodejs-notes/api/" class="nav-link">
+  Node.js API
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/nodejs-notes/core/" class="nav-link router-link-active">
+  JS Core
+</a></div><div class="nav-item"><a href="/nodejs-notes/api/" class="nav-link">
+  Node.js API
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>数据类型</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading open"><span>原始类型</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/nodejs-notes/core/symbol.html" class="sidebar-link">Symbol</a></li></ul></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>引用类型</span> <span class="arrow right"></span></p> <!----></section></li></ul></section></li><li><a href="/nodejs-notes/core/proxy.html" aria-current="page" class="active sidebar-link">Proxy 代理</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/nodejs-notes/core/proxy.html#创建-proxy" class="sidebar-link">创建 Proxy</a></li><li class="sidebar-sub-header"><a href="/nodejs-notes/core/proxy.html#捕获器" class="sidebar-link">捕获器</a></li><li class="sidebar-sub-header"><a href="/nodejs-notes/core/proxy.html#捕获器不变性" class="sidebar-link">捕获器不变性</a></li></ul></li><li><a href="/nodejs-notes/core/iterator.html" class="sidebar-link">迭代器</a></li><li><a href="/nodejs-notes/core/promise.html" class="sidebar-link">Promise</a></li><li><a href="/nodejs-notes/core/tagfunction.html" class="sidebar-link">Tag function</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="proxy-代理"><a href="#proxy-代理" class="header-anchor">#</a> Proxy 代理</h1> <h2 id="创建-proxy"><a href="#创建-proxy" class="header-anchor">#</a> 创建 Proxy</h2> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> handler<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><ul><li>target 被包装的目标对象，任意类型的对象（引用类型）</li> <li>handler 描述包装行为的对象，该对象各属性值通常为对象</li></ul> <div class="code-block inside-gutter">// handler 传入 {}
+const target = {
+  id: &quot;target&quot;,
+};
+
+const proxy = new Proxy(target, {});
+
+// proxy 和 target 访问同一属性返回一致
+console.log(target.id); // target
+console.log(proxy.id); // target
+
+// 给 target 的属性赋值会反映在 target, proxy 上
+// 因为访问了同一个值
+target.id = &quot;foo&quot;;
+console.log(target.id); // foo
+console.log(proxy.id); // foo
+
+// 给 proxy 的属性赋值会反映在 target, proxy 上
+// 赋值转移到了 target 上
+proxy.id = &quot;bar&quot;;
+console.log(target.id); // bar
+console.log(proxy.id); // bar
+
+// hasOwnProperty() 方法在两个地方
+// 都会应用到目标对象
+console.log(target.hasOwnProperty(&quot;id&quot;)); // true
+console.log(proxy.hasOwnProperty(&quot;id&quot;)); // true
+
+// 不同 runtime 实现中，Proxy.prototype 不同 (undefined/null), node 10 及以下返回 null
+// http://www.ecma-international.org/ecma-262/#sec-properties-of-the-proxy-constructor
+// Spec 说应该是 undefined，这是一条特别规定
+console.log(Proxy, Proxy.prototype);
+console.log(proxy instanceof Proxy);
+</div><div class="code-block inside-gutter">const target = {
+  foo: &quot;bar&quot;,
+};
+
+const handler = {
+  // 捕获器在处理程序对象中以方法名为键
+  get() {
+    return &quot;handler override&quot;;
+  },
+};
+
+const proxy = new Proxy(target, handler);
+
+console.log(target.foo); // bar
+console.log(proxy.foo); // handler override
+
+console.log(target[&quot;foo&quot;]); // bar
+console.log(proxy[&quot;foo&quot;]); // handler override
+
+console.log(Object.create(target)[&quot;foo&quot;]); // bar
+console.log(Object.create(proxy)[&quot;foo&quot;]); // handler override
+</div><h2 id="捕获器"><a href="#捕获器" class="header-anchor">#</a> 捕获器</h2> <p>使用代理的目的是定义捕获器（trap），捕获器就是在处理对象中定义的<strong>基本操作拦截器</strong>。
+处理对象所有可拦截的行为都有对应的反射（Reflect）API 方法，可以直接调用获得默认行为。</p> <h2 id="捕获器不变性"><a href="#捕获器不变性" class="header-anchor">#</a> 捕获器不变性</h2> <p>使用捕获器改变基本操作的行为，是有限制的。捕获程序需要遵循<strong>捕获器不变式</strong>（trap invariant).</p> <p>比如一个不可写不可配置的属性，无法通过 get 捕获器覆盖其返回值。</p> <div class="code-block inside-gutter">const target = {};
+Object.defineProperty(target, &quot;foo&quot;, { value: &quot;bar&quot; });
+console.log(Object.getOwnPropertyDescriptor(target, &quot;foo&quot;));
+
+const proxy = new Proxy(target, {
+  get() {
+    return &quot;abc&quot;;
+  },
+});
+console.log(proxy.foo);
+</div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/nodejs-notes/core/set.html" class="prev">
+        Set 集合
+      </a></span> <span class="next"><a href="/nodejs-notes/core/iterator.html">
+        迭代器
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/nodejs-notes/assets/js/app.21c8c690.js" defer></script><script src="/nodejs-notes/assets/js/3.3c66409c.js" defer></script><script src="/nodejs-notes/assets/js/16.2a709045.js" defer></script>
+  </body>
+</html>

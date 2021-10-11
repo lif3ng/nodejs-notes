@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>迭代器</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/nodejs-notes/assets/css/0.styles.e62306a8.css" as="style"><link rel="preload" href="/nodejs-notes/assets/js/app.21c8c690.js" as="script"><link rel="preload" href="/nodejs-notes/assets/js/3.3c66409c.js" as="script"><link rel="preload" href="/nodejs-notes/assets/js/14.ffb663c6.js" as="script"><link rel="prefetch" href="/nodejs-notes/assets/js/1.7384dd9d.js"><link rel="prefetch" href="/nodejs-notes/assets/js/10.5f4d0c8f.js"><link rel="prefetch" href="/nodejs-notes/assets/js/11.521db22d.js"><link rel="prefetch" href="/nodejs-notes/assets/js/12.afa08de9.js"><link rel="prefetch" href="/nodejs-notes/assets/js/13.80238336.js"><link rel="prefetch" href="/nodejs-notes/assets/js/15.2be05732.js"><link rel="prefetch" href="/nodejs-notes/assets/js/16.2a709045.js"><link rel="prefetch" href="/nodejs-notes/assets/js/17.fa715d45.js"><link rel="prefetch" href="/nodejs-notes/assets/js/18.d9ddc906.js"><link rel="prefetch" href="/nodejs-notes/assets/js/19.497f6348.js"><link rel="prefetch" href="/nodejs-notes/assets/js/20.42e9dc36.js"><link rel="prefetch" href="/nodejs-notes/assets/js/21.ee788258.js"><link rel="prefetch" href="/nodejs-notes/assets/js/4.eb89986a.js"><link rel="prefetch" href="/nodejs-notes/assets/js/5.c15b3792.js"><link rel="prefetch" href="/nodejs-notes/assets/js/6.de1e01ed.js"><link rel="prefetch" href="/nodejs-notes/assets/js/7.fd3efa5e.js"><link rel="prefetch" href="/nodejs-notes/assets/js/8.b3e41791.js"><link rel="prefetch" href="/nodejs-notes/assets/js/9.60345875.js">
+    <link rel="stylesheet" href="/nodejs-notes/assets/css/0.styles.e62306a8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/nodejs-notes/" class="home-link router-link-active"></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/nodejs-notes/core/" class="nav-link router-link-active">
+  JS Core
+</a></div><div class="nav-item"><a href="/nodejs-notes/api/" class="nav-link">
+  Node.js API
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/nodejs-notes/core/" class="nav-link router-link-active">
+  JS Core
+</a></div><div class="nav-item"><a href="/nodejs-notes/api/" class="nav-link">
+  Node.js API
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>数据类型</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading open"><span>原始类型</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/nodejs-notes/core/symbol.html" class="sidebar-link">Symbol</a></li></ul></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>引用类型</span> <span class="arrow right"></span></p> <!----></section></li></ul></section></li><li><a href="/nodejs-notes/core/proxy.html" class="sidebar-link">Proxy 代理</a></li><li><a href="/nodejs-notes/core/iterator.html" aria-current="page" class="active sidebar-link">迭代器</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/nodejs-notes/core/iterator.html#可迭代对象" class="sidebar-link">可迭代对象</a></li><li class="sidebar-sub-header"><a href="/nodejs-notes/core/iterator.html#迭代器对象" class="sidebar-link">迭代器对象</a></li><li class="sidebar-sub-header"><a href="/nodejs-notes/core/iterator.html#迭代结果对象" class="sidebar-link">迭代结果对象</a></li></ul></li><li><a href="/nodejs-notes/core/promise.html" class="sidebar-link">Promise</a></li><li><a href="/nodejs-notes/core/tagfunction.html" class="sidebar-link">Tag function</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="迭代器"><a href="#迭代器" class="header-anchor">#</a> 迭代器</h1> <p>迭代器周边有几个基础概念，分别是:</p> <ul><li>可迭代对象</li> <li>迭代器对象</li> <li>迭代结果</li></ul> <h2 id="可迭代对象"><a href="#可迭代对象" class="header-anchor">#</a> 可迭代对象</h2> <p>具有专用迭代器方法（以 <code>Symbol.iterator</code> 命名），且该方法返回<a href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%AF%B9%E8%B1%A1">迭代器对象</a>的对象</p> <h2 id="迭代器对象"><a href="#迭代器对象" class="header-anchor">#</a> 迭代器对象</h2> <p>具有 next 方法，且该方法返回<a href="#%E8%BF%AD%E4%BB%A3%E7%BB%93%E6%9E%9C%E5%AF%B9%E8%B1%A1">迭代结果对象</a>的对象</p> <h2 id="迭代结果对象"><a href="#迭代结果对象" class="header-anchor">#</a> 迭代结果对象</h2> <p>具有 value 和 done 属性的对象</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/nodejs-notes/core/proxy.html" class="prev">
+        Proxy 代理
+      </a></span> <span class="next"><a href="/nodejs-notes/core/promise.html">
+        Promise
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/nodejs-notes/assets/js/app.21c8c690.js" defer></script><script src="/nodejs-notes/assets/js/3.3c66409c.js" defer></script><script src="/nodejs-notes/assets/js/14.ffb663c6.js" defer></script>
+  </body>
+</html>
